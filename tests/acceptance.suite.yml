@@ -2,11 +2,15 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'http://127.0.0.1:8080/'
+            url: 'http://localhost:8080/'
+            window_size: false # disabled in ChromeDriver
+            port: 9515
             browser: chrome
             capabilities:
-             chromeOptions:
-               args: ["--headless", "--disable-gpu"]
+                chromeOptions:
+                    args: ["--headless", "--disable-gpu"]
+                    prefs:
+                        download.default_directory: "..."
         - Yii2:
             part: orm
             entryScript: index-test.php
@@ -14,6 +18,6 @@ modules:
 extensions:
     enabled:
         - Codeception\Extension\RunProcess:
-            #0: php -S 127.0.0.1:8080 -t web
+            0: php tests/bin/yii serve
             #1: selenium-standalone start --singleDriverStart=chrome
             sleep: 4
