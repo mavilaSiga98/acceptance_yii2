@@ -4,6 +4,8 @@ modules:
         - WebDriver:
             url: 'http://127.0.0.1:8080/'
             browser: chrome
+            host: 'selenium'
+            port: '4444'
             capabilities:
              chromeOptions:
                args: ["--headless", "--disable-gpu"]
