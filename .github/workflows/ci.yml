@@ -20,13 +20,10 @@ jobs:
           mysql --version
           sudo service mysql start
 
-      
-      
-      - name: ☁ Selenium
+      - name: ☁ Install Selenium
         run: |
           npm install selenium-standalone -g
           selenium-standalone install
-          selenium-standalone start
 
       - name: Run tests with codeception
         run: |
