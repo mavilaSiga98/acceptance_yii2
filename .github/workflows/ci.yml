@@ -29,8 +29,8 @@ jobs:
           npm install selenium-standalone -g
           selenium-standalone install
 
-      - name: Run chromedriver 
-        run: nohup $ CHROMEWEBDRIVER / chromedriver --url-base = / wd / hub / dev / null 2> & 1 & 
+      - name: Run chromedriver
+        run:  nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
 
 
       - name: Run tests with codeception
