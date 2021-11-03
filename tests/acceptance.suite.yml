@@ -3,7 +3,10 @@ modules:
     enabled:
         - WebDriver:
             url: 'http://127.0.0.1:8080/'
-            browser: firefox
+            browser: chrome
+            capabilities:
+             chromeOptions:
+               args: ["--headless", "--disable-gpu"]
         - Yii2:
             part: orm
             entryScript: index-test.php
@@ -12,5 +15,5 @@ extensions:
     enabled:
         - Codeception\Extension\RunProcess:
             0: php -S 127.0.0.1:8080 -t web
-            1: selenium-standalone start
+            1: selenium-standalone start --singleDriverStart=chrome
             sleep: 4
