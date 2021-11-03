@@ -6,7 +6,7 @@ modules:
             browser: chrome
             capabilities:
              chromeOptions:
-               args: ["--headless", "--disable-gpu"]
+               args: ["--headless", "--disable-gpu", "--no-sandbox"]
         - Yii2:
             part: orm
             entryScript: index-test.php
