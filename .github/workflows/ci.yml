@@ -24,6 +24,11 @@ jobs:
         run: |
           npm install selenium-standalone -g
           selenium-standalone install
+      
+      - name: ☁ Install firefox
+        run: |
+          apt-get update
+          apt install firefox
 
       - name: Run tests with codeception
         run: |
